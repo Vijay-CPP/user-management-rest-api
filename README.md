@@ -19,12 +19,12 @@ This is a Node.js application for managing user information using a RESTful API.
 
 #### Get all users
 
-```http
+```bash
   GET /users
 ```
 #### Get used by id
 
-```http
+```bash
   GET /users/${id}
 ```
 
@@ -34,10 +34,10 @@ This is a Node.js application for managing user information using a RESTful API.
 
 #### Add user
 
-```http
+```bash
   POST /users
 ```
-```http
+```bash
   raw json body with keys
     name (Required)
     email (Required)(Unique)
@@ -47,10 +47,10 @@ This is a Node.js application for managing user information using a RESTful API.
 #### Update user
 User will be updated with the matching Id
 
-```http
+```bash
   PUT /users/${id}
 ```
-```http
+```bash
   raw json body with keys
     name (Required)
     email (Required)(Unique)
@@ -58,7 +58,7 @@ User will be updated with the matching Id
 ```
 #### Delete user
 
-```http
+```bash
   Delete /users/${id}
 ```
 It will delete based on matching id.
