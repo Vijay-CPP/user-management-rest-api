@@ -22,6 +22,8 @@ This is a Node.js application for managing user information using a RESTful API.
 ```bash
   GET /users
 ```
+![Screenshot_20230215_113858](https://user-images.githubusercontent.com/74971365/219116229-3bbf56c6-0a12-44d0-9bf1-31d7bb2b85d5.png)
+
 #### Get used by id
 
 ```bash
@@ -43,6 +45,8 @@ This is a Node.js application for managing user information using a RESTful API.
     email (Required)(Unique)
     password (len >= 8)
 ```
+
+![Screenshot_20230215_113933](https://user-images.githubusercontent.com/74971365/219116292-8387f7c7-bae1-4c7a-bb1d-283c2092baa7.png)
 
 #### Update user
 User will be updated with the matching Id
