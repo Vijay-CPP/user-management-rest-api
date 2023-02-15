@@ -16,9 +16,15 @@ mongoose.set("strictQuery", false);
 mongoose
     .connect(url, { useNewUrlParser: true })
     .then(() => {
-        app.listen(5000, () => {
+        const PORT = process.env.PORT || 5000;
+
+        app.listen(PORT, () => {
             console.log("MongoDB Connected Successfully!");
-            console.log("Server running a port 5000");
+            console.log(`Server running a port ${PORT}`);
         });
     })
-    .catch((err)=> console.log(err));
+    .catch((err) => console.log(err));
+
+app.get("/", (req, res, next) => {
+    res.send("<h2>User Management REST-API</h2>");
+});
