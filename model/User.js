@@ -14,7 +14,6 @@ const userObj = {
     password:{
         type: String,
         required: true,
-        minLength: 8
     }
 } 
 

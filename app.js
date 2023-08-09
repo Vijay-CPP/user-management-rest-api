@@ -4,7 +4,8 @@ const router = require("./routes/user-routes");
 const bodyParser = require('body-parser');
 require('dotenv').config()
 const cors = require("cors");
-const app = express();
+const path = require("path")
+const app = express(); 
 
 app.use(cors());
 
@@ -15,7 +16,7 @@ app.use("/users", router)
 const url = process.env.URL;
 
 mongoose.set("strictQuery", false);
-
+ 
 mongoose
     .connect(url, { useNewUrlParser: true })
     .then(() => {
@@ -27,7 +28,12 @@ mongoose
         });
     })
     .catch((err) => console.log(err));
-
+ 
 app.get("/", (req, res, next) => {
-    res.send("<h2>User Management REST-API</h2>");
+    const options = {
+        root: path.join(__dirname)
+    };
+ 
+    const fileName = 'README.md';
+    res.sendFile(fileName, options);
 });

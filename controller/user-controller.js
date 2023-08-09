@@ -1,5 +1,6 @@
 const User = require("../model/User");
-
+const bcrypt = require('bcrypt');
+const saltRounds = 12;
 
 const getAllUsers = async (req, res, next) => {
     let users;
@@ -29,7 +30,7 @@ const addUser = async (req, res, next) => {
         user = new User({
             name,
             email,
-            password
+            password: await bcrypt.hash(password, saltRounds)
         });
         user = await user.save();
     } catch (err) {
