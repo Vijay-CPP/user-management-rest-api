@@ -8,15 +8,12 @@ const path = require("path")
 const app = express(); 
 
 app.use(cors());
-
 app.use(bodyParser.json()) // for parsing application/json
-
 app.use("/users", router)
+app.use(express.static(path.join(__dirname, "public")));
 
 const url = process.env.URL;
-
 mongoose.set("strictQuery", false);
- 
 mongoose
     .connect(url, { useNewUrlParser: true })
     .then(() => {
@@ -28,3 +25,4 @@ mongoose
         });
     })
     .catch((err) => console.log(err));
+

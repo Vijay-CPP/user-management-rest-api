@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management REST-API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>User Management REST-API</h1>
+    <p>This is a Node.js application for managing user information using a RESTful API. The application uses Express.js
+        as the web framework and MongoDB as the database.</p>
+
+    <h2>Installation</h2>
+    <ol>
+        <li>Clone the repository to your local machine.</li>
+        <li>Install the required packages using npm:</li>
+    </ol>
+    <pre>
+    <code>
+      npm install
+    </code>
+  </pre>
+    <ol start="3">
+        <li>Start the server using npm through nodemon:</li>
+    </ol>
+    <pre>
+    <code>
+      npm run devStart
+    </code>
+  </pre>
+
+    <h2>API Reference</h2>
+
+    <h3>Get all users</h3>
+    <pre>
+    <code>
+      GET /users
+    </code>
+    </pre>
+
+    <h3>Get used by id</h3>
+    <pre>
+    <code>
+        GET /users/${id}
+
+        Parameter - id
+        Type - string
+        Description - Id of user to fetch (Required) 
+    </code>
+    </pre>
+
+    <h3>Add user</h3>
+    <pre>
+    <code>
+        POST /users
+
+        JSON body with following structure
+        user = {
+            name (Required),
+            email (Required) (Unique),
+            password (len >= 8)
+        }
+    </code>
+    </pre>
+
+    
+    <h3>Update user</h3>
+    <pre>
+    <code>
+        PUT /users/${id}
+
+        JSON body with following structure
+        user = {
+            name (Required),
+            email (Required) (Unique),
+            password (len >= 8)
+        }
+    </code>
+    </pre>
+
+    
+    <h3>Delete user</h3>
+    <pre>
+    <code>
+        Delete /users/${id}
+
+        Parameter - id
+        Type - string
+        Description - Id of user to delete (Required) 
+    </code>
+    </pre>
+</body>
+
+</html>
