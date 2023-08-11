@@ -28,12 +28,3 @@ mongoose
         });
     })
     .catch((err) => console.log(err));
- 
-app.get("/", (req, res, next) => {
-    const options = {
-        root: path.join(__dirname)
-    };
- 
-    const fileName = 'README.md';
-    res.sendFile(fileName, options);
-});
